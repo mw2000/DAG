@@ -4,6 +4,10 @@ To counter this we came up with the idea of DAG, a platform representing the ide
 The DAG will replace the Legislative Wing of our current Government system and drastically reduce the power of the executive to a figurehead. The Judicial branch will however still be separate, so to avoid unlawful populist opinion be overturned.
 In terms of the software, this repo will act as a webApp where the users can interact with the backend built in Solidity (Ethereum Blockchain).
 
+## TODO
+- Need to change the structure of the smart contracts.
+- Need way to introduce promotion and demotion of members. (**PRIORITY**)
+
 ## HackDavis 2020
 For HackDavis, we aim this to be a framework to be used for ASUCD, therefore we will make it more 'personalized' as an alternative to the ASUCD. We will be looking at the functions they perform, and making software to replace the same.
 
