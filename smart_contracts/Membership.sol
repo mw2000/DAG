@@ -19,7 +19,6 @@ contract Membership {
         uint32 reputation;
     }
 
-
     // // Map member names to strings
     // mapping (string => address) public name_to_addr_db;
     // Core Map, get member data usingthe address
@@ -46,6 +45,12 @@ contract Membership {
             } else {
                 rank_db[uuid].votes_against++;
             }
+        } else if (vote_mode == 3) {
+            if (vote) {
+                rank_req_db[uuid].votes_for++;
+            } else {
+                rank_req_db[uuid].votes_against++;
+            }
         }
         membership_db[_voter].reputation++;
         return true;
@@ -57,7 +62,28 @@ contract Membership {
         //  ** Scrap this for now, make it open model
         // execute_vote();
         // Restrict to email
-        membership_db[msg.sender] = Member(rank[1], msg.sender, name, email, age);
+        membership_db[msg.sender] = Member(rank_db[1], msg.sender, name, email, age);
+    }
+
+    function accept(uint32 uuid, uint32 accept_mode, uint32 current_date) public returns (bool){
+        if (accept_mode == 1) {
+            if (msg.sender == resolution_db[uuid].proposee_addr && current_date >= resolution_db[uuid].decision_date
+                && resolution_db[uuid].votes_for > resolution_db[uuid].votes_against) {
+                    resolution_db[uuid].accepted = true;
+            }
+        } else if (accept_mode == 2) {
+            if (msg.sender == rank_db[uuid].proposee_addr && current_date >= rank_db[uuid].decision_date
+                && rank_db[uuid].votes_for > rank_db[uuid].votes_against) {
+                    rank_db[uuid].accepted = true;
+            }
+        } else if (accept_mode == 3) {
+            if (msg.sender == rank_req_db[uuid].proposee_addr && current_date >= rank_req_db[uuid].decision_date
+                    && rank_req_db[uuid].votes_for > rank_req_db[uuid].votes_against) {
+                    rank_req_db[uuid].accepted = true;
+                    membership_db[uuid].Rank = rank_db[rank_req_db[uuid].rank_uuid];
+            }
+        }
+        return true;
     }
 
     function get_member_id(address member_addr) public returns (address, string, string, uint32, uint32){

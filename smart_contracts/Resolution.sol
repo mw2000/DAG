@@ -46,5 +46,13 @@ contract Resolution {
         // membership_db[proposee].reputation += 100;
         return true;
     }
+
+    function get_resolution(uint32 uuid) public returns (uint32, address, uint32, uint32, string memory, 
+        string memory, string memory, string memory, uint32, uint32, bool) {
+        return (resolution_db[uuid].uuid, resolution_db[uuid].proposee_addr, resolution_db[uuid].votes_for, 
+            resolution_db[uuid].votes_against, resolution_db[uuid].url, resolution_db[uuid].hash_tag, 
+            resolution_db[uuid].description, resolution_db[uuid].title,resolution_db[uuid].proposal_date, 
+            resolution_db[uuid].decision_date, resolution_db[uuid].accepted);
+    }
 }
 
