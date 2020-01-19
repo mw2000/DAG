@@ -1,0 +1,57 @@
+NETWORK = Rinkeby (4)
+DEPLOY ADDRESS = 0x5E72914535f202659083Db3a02C984188Fa26e9f
+DEPLOYER ADDRESS = 0xfa3354a4660ace44c94ae5d030db98374f41a763
+ABI = [
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "membership_db",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "rank",
+				"type": "uint32"
+			},
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
+			},
+			{
+				"internalType": "uint32",
+				"name": "age",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "reputation",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
