@@ -20,3 +20,5 @@ For HackDavis, we aim this to be a framework to be used for ASUCD, therefore we 
 ## Contributors
 - Anjali Nagaraj
 - Mihir Wadekar
+
+_*Note: Smart Contract deployed at 0x5E72914535f202659083Db3a02C984188Fa26e9f on Rinkeby*_
