@@ -2,7 +2,7 @@
 // Description - Smart Contract containing the ranks given to members, to elevate them to a committee
 // TODO - Maybe give a powers array or something. (Too Vague)
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.8;
 
 contract RankDB {
 

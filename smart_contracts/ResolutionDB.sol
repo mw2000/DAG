@@ -2,15 +2,15 @@
 // Description - Smart Contract containing the resolutions introduced
 // TODO - None for now
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.8;
 
 contract ResolutionDB {
 
     struct Resolution {
         uint32 uuid; // Unique id of the resolution
         address proposee_addr;
-        uint votes_for;
-        uint votes_against;
+        uint32 votes_for;
+        uint32 votes_against;
         string url;
         string hash_tag;
         string description;
